@@ -137,3 +137,31 @@ function giveMatches(farm) {
 
 giveMatches(myFarm); 
 console.log(myFarm[0]);
+
+// Nesting
+var friends = [];
+
+friends.push(animals[1].username);
+friends.push(animals[2].username);
+
+console.log(friends);
+
+var relationships = {};
+
+relationships.friends = friends;
+
+console.log(relationships);
+console.log(Object.keys(relationships).length);
+
+var matches = [];
+relationships.matches = matches;
+
+relationships.matches.push(relationships.friends[0]);
+
+console.log(relationships);
+
+for (var i = 0; i < animals.length; i++) {
+  animals[i].relationships = {};
+}
+
+console.log(animals);
